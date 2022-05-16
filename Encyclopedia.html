@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--Represents the document type, and helps browsers to display web pages correctly.-->
+
+<html lang="en">
+<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
+
+<head>
+    <!--container for metadata-->
+    <meta charset="utf-8">
+    <!--Specify the character encoding for the HTML document.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+
+    <title>Encyclopedia - ACNH Apps</title>
+    <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
+    <link rel="icon" type="image/icon" href="Images\favicon.ico">
+    <link rel="stylesheet" href="Style/Style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+
+    <script src="Scripts/universalScripts/header.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/addSubtractDays.js" defer type="text/javascript"></script>
+    <script src="Scripts/universalScripts/eventsFunctions.js" defer type="text/javascript"></script>
+    <script src="Scripts\universalScripts\suggestiveTextbox.js" defer type="text/javascript"></script>
+
+    <script src="Scripts/lists/Bugs.js" defer type="text/javascript"></script>
+    <script src="Scripts/lists/Fish.js" defer type="text/javascript"></script>
+    <script src="Scripts/lists/Diving.js" defer type="text/javascript"></script>
+
+    <script src="Scripts\Encyclopedia\searchCritter.js" defer type="text/javascript"></script>
+    <script src="Scripts\Encyclopedia\bookBehavior.js" defer type="text/javascript"></script>
+    <script src="Scripts\Encyclopedia\encyclopediaIndex.js" defer type="text/javascript"></script>
+    <script src="Scripts\Encyclopedia\bugPage.js" defer type="text/javascript"></script>
+    <script src="Scripts\Encyclopedia\fishPage.js" defer type="text/javascript"></script>
+    <script src="Scripts\Encyclopedia\divePage.js" defer type="text/javascript"></script>
+    <script src="Scripts\Encyclopedia\Encyclopedia.js" defer type="text/javascript"></script>
+
+    <!--Used to embed a client-side script (JavaScript).-->
+    <!-- "defer" A script that will not run until after the page has loaded-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7H31G1T9W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S7H31G1T9W');
+    </script>
+</head>
+
+<body class="backImage">
+    <!--Contains all the contents of an HTML document.-->
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
+    <header class="flex align" id="header">
+
+    </header>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
+    <main class="mainContent flexVertical">
+
+        <!-- <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p> -->
+
+        <h3>How to Use:</h3>
+        <p>Select your hemisphere. <br> <br>
+            Use the arrows under the book to navigate. In the index, click on a critter to see their specifications.
+            Or use the search input to immediatly look for the critter in mind. <br> <br>
+            Use the shortcuts above the book to go to the diffrent sections (Bugs, Fish, Diving) <br> <br>
+            If you want to go back to the cover of the encyclopedia, Click on the page number <br> <br>
+        </p>
+
+        <div style="align-self: center; font-size: 1.2em;">
+            <div>
+                <input type="radio" name="hemisphere" id="northHem" onchange="hemChange()" value="northHem" checked>
+                <label for="northHem">North Hemisphere</label>
+            </div>
+            <div>
+                <input type="radio" name="hemisphere" id="southHem" onchange="hemChange()" value="southHem">
+                <label for="southHem">South Hemisphere</label>
+            </div>
+        </div>
+
+        <form class="flex form" autocomplete="off" style="height: 40px;">
+            <div class="autocomplete" style="width: 100%;">
+                <input type="text" id="creatureInput" style="height: 90%; width: 98%;">
+            </div>
+            <button type="button" class="btn" id="search" style="width:35%; padding: 0px;" onclick="searchCritter()">
+                <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="Search" style="height: 70%;">
+            </button>
+        </form>
+
+        <div class="flexVertical" id="encyclopediaDiv" style="height: 550px; gap: 0px;">
+            <div id="Shortcuts">
+                <button class="shortcutBtn" onclick="Bug()">
+                    <img src="https://dodo.ac/np/images/f/f8/Common_Butterfly_NH_Icon.png" alt="" style="width: 50px;">
+                </button>
+                <button class="shortcutBtn" onclick="Fish()">
+                    <img src="https://dodo.ac/np/images/4/4d/Bitterling_NH_Icon.png" alt="" style="width: 50px;">
+                </button>
+                <button class="shortcutBtn" onclick="Dive()">
+                    <img src="https://dodo.ac/np/images/5/58/Octopus_NH_Icon.png" alt="" style="width: 50px;">
+                </button>
+            </div>
+
+            <div class="flexVertical" id="encyclopedia" style="gap: 0px">
+                <div id="book">
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
+    <footer class="flex bottomLinks">
+        <p>DA: DA-9419-3603-8052 <br> Creator ID: MA-4116-4314-7050 <br> HHN ID: RA-7852-3149-7307</p>
+    </footer>
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
+</body>
+
+</html>
