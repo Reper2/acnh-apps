@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<!--Represents the document type, and helps browsers to display web pages correctly.-->
-
 <html lang="en">
-<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
 
 <head>
-    <!--container for metadata-->
-    <meta charset="utf-8">
-    <!--Specify the character encoding for the HTML document.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>DIY Profits - ACNH Apps</title>
-    <link rel="icon" type="image/icon" href="Images\favicon.ico">
-    <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
-    <link rel="stylesheet" href="Style/Style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="Style/Style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-
-    <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet" />
 
     <script src="Scripts/universalScripts/header.js" defer type="text/javascript"></script>
     <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
@@ -40,8 +34,6 @@
 
     <script src="Scripts/diyProfits/DIYProfitsRows.js" defer type="text/javascript"></script>
     <script src="Scripts/diyProfits/DIYProfits.js" defer type="text/javascript"></script>
-    <!--Used to embed a client-side script (JavaScript).-->
-    <!-- "defer" A script that will not run until after the page has loaded-->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7H31G1T9W"></script>
@@ -55,29 +47,20 @@
 </head>
 
 <body class="backImage">
-    <!--Contains all the contents of an HTML document.-->
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
-    <header class="flex align" id="header">
-
-    </header>
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
+    <header class="flex align" id="header"></header>
     <div class="mainContent flexVertical" id="formWrapper">
-
-        <!-- <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p> -->
-
         <h3>How to Use:</h3>
-        <p>Fill in the amount of materials you want to craft and what material you want to craft with. <br>
-            Click "Add" if you want to add more materials. <br>
-            When you noted all materials click "Calculate". <br>
-            Depending on how many materials you've noted, this may take some time. <br>
+        <p>
+            Fill in the amount of materials you want to craft and what material you want to craft with.<br>
+            Click "Add" if you want to add more materials.<br>
+            When you noted all materials click "Calculate".<br>
+            Depending on how many materials you've noted, this may take some time.<br>
             When it's finished you see all the DIY's that can be crafted with the given materials and how much profit
-            you'll get for crafting and selling the item. <br> <br>
+            you'll get for crafting and selling the item.<br><br>
             Optionally you can note your native fruit and hot items of the day.
             Sometimes the hot items make a difference in selling value but the native fruit is always more profitable
-            selling somewhere else. <br> <br>
+            selling somewhere else.<br><br>
         </p>
-
-        <!-- update for native fruit and hot items of the day -->
 
         <form class="flex">
             <h3 style="display: inline-block;">Native Fruit?</h3>
@@ -101,35 +84,37 @@
             </form>
         </form>
 
-        <!-- form for the amount, dropdown and add button (another one gets added with javascript everytime add is clicked) -->
         <form class="flex form" id="form0">
             <input type="number" id="input0" value="0">
-            <select id="material0">
-
-            </select>
+            <select id="material0"></select>
             <button type="button" class="addBtn btn" id="btn0" onclick="buttonAddClicked(this.id)">Add</button>
         </form>
 
-        <!-- calculate button -->
         <div id="calcBtn">
             <button class="calc btn" onclick="calcClick()">Calculate</button>
         </div>
         <div style="width: 60%; align-self: center;">
-            <button type="button" class="removeBtn btn" id="reset" style="width:100%;"
-                onclick="resetClick()">Reset</button>
+            <button type="button" class="removeBtn btn" id="reset" style="width:100%;" onclick="resetClick()">Reset</button>
         </div>
     </div>
 
-    <!-- the list with craftable items when calculated -->
-    <div id="profitable" class="mainContent flexVertical" style="display: none">
+    <div id="profitable" class="mainContent flexVertical" style="display: none"></div>
 
-    </div>
-
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
     <footer class="flex bottomLinks">
         <p>DA: DA-9419-3603-8052 <br> Creator ID: MA-4116-4314-7050 <br> HHN ID: RA-7852-3149-7307</p>
     </footer>
-    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        // Register a service worker after the load event
+        addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').then(console.log('Service worker successfully installed.'))
+        });
+    };
+
+    onappinstalled = event => {
+        console.log('Thank you for installing the app!');
+    };
+</script>
 
 </html>

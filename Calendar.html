@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<!--Represents the document type, and helps browsers to display web pages correctly.-->
-
 <html lang="en">
-<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
 
 <head>
-    <!--container for metadata-->
-    <meta charset="utf-8">
-    <!--Specify the character encoding for the HTML document.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Calendar - ACNH Apps</title>
-    <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
-    <link rel="icon" type="image/icon" href="Images\favicon.ico">
-    <link rel="stylesheet" href="Style/Style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="Style/Style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet" />
 
     <script src="Scripts/universalScripts/header.js" defer type="text/javascript"></script>
     <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
@@ -40,8 +35,6 @@
     <script src="Scripts/Calendar/showCalendar.js" defer type="text/javascript"></script>
 
     <script src="Scripts/Calendar/dayClicked.js" defer type="text/javascript"></script>
-    <!--Used to embed a client-side script (JavaScript).-->
-    <!-- "defer" A script that will not run until after the page has loaded-->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7H31G1T9W"></script>
@@ -55,73 +48,69 @@
 </head>
 
 <body class="backImage">
-    <!--Contains all the contents of an HTML document.-->
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
-    <header class="flex align" id="header">
-
-    </header>
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
+    <header class="flex align" id="header"></header>
     <main class="mainContent flexVertical">
-
-        <!-- <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p> -->
 
         <h3>How to Use:</h3>
         <p>
-            Click on "Show Events" to see the Events. <br>
-            Click on "Show Birthdays" to see the Birthdays. <br>
-            Specify your Hemisphere. By default always North. <br> <br>
-            Click the arrows to go to next or previous months. <br>
-            Click on any day to see the specifics of that day. Including events, seasonal materials and birthdays. <br>
-            Click on the month to jump back to the current date. <br> <br>
+            Click on "Show Events" to see the Events.<br>
+            Click on "Show Birthdays" to see the Birthdays.<br>
+            Specify your Hemisphere. By default always North.<br><br>
+            Click the arrows to go to next or previous months.<br>
+            Click on any day to see the specifics of that day. Including events, seasonal materials and birthdays.<br>
+            Click on the month to jump back to the current date.<br><br>
         </p>
 
         <div style="align-self: center; font-size: 1.2em;">
             <div>
-                <input type="checkbox" name="events" id="showEvents" value="showEvents" checked
-                    onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                <input type="checkbox" name="events" id="showEvents" value="showEvents" checked onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
                 <label for="showEvents">Show Events</label>
             </div>
+
             <div>
-                <input type="checkbox" name="birthdays" id="showBirthdays" value="showBirthdays"
-                    onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                <input type="checkbox" name="birthdays" id="showBirthdays" value="showBirthdays" onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
                 <label for="showBirthdays">Show Birthdays</label>
             </div>
         </div>
 
         <div style="align-self: center; font-size: 1.2em;">
             <div>
-                <input type="radio" name="hemisphere" id="northHem" value="northHem" checked
-                    onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                <input type="radio" name="hemisphere" id="northHem" value="northHem" checked onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
                 <label for="northHem">North Hemisphere</label>
             </div>
+
             <div>
-                <input type="radio" name="hemisphere" id="southHem" value="southHem"
-                    onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
+                <input type="radio" name="hemisphere" id="southHem" value="southHem" onclick="showCalendar(getSelectedMonth(), getSelectedYear())">
                 <label for="southHem">South Hemisphere</label>
             </div>
         </div>
 
         <div class="flex" style="width: 100%; justify-content: space-between; align-items: center;">
-            <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/back.png" alt=""
-                    style="width: 100%;" onclick="back()"></button>
+            <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/back.png" alt="" style="width: 100%;" onclick="back()"></button>
             <h3 id="monthName" style="font-size: 1.5em; flex-grow: 1;" onclick="backToCurrentDay()"></h3>
-            <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/next.png" alt=""
-                    style="width: 100%;" onclick="next()"></button>
+            <button style="width: 65px; background-color: transparent; border: none;"><img src="Images/next.png" alt="" style="width: 100%;" onclick="next()"></button>
         </div>
 
-        <table id="tableContainer">
-
-        </table>
+        <table id="tableContainer"></table>
     </main>
 
-    <div id="currentDay" class="mainContent flexVertical" style="display: none">
+    <div id="currentDay" class="mainContent flexVertical" style="display: none"></div>
 
-    </div>
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
     <footer class="flex bottomLinks">
         <p>DA: DA-9419-3603-8052 <br> Creator ID: MA-4116-4314-7050 <br> HHN ID: RA-7852-3149-7307</p>
     </footer>
-    <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        // Register a service worker after the load event
+        addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').then(console.log('Service worker successfully installed.'))
+        });
+    };
+
+    onappinstalled = event => {
+        console.log('Thank you for installing the app!');
+    };
+</script>
 
 </html>

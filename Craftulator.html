@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<!--Represents the document type, and helps browsers to display web pages correctly.-->
-
 <html lang="en">
-<!--declare the language of the Web page. This is meant to assist search engines and browsers.-->
 
 <head>
-    <!--container for metadata-->
-    <meta charset="utf-8">
-    <!--Specify the character encoding for the HTML document.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Gives the browser instructions on how to control the page's dimensions and scaling.-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Craftulator - ACNH Apps</title>
-    <link rel="icon" type="image/icon" href="Images\favicon.ico">
-    <!--Defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.-->
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="Style/Style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-
-    <!--Defines the relationship between the current document and an external resource. Used to link to external style sheets.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet" />
 
     <script src="Scripts/universalScripts/header.js" defer type="text/javascript"></script>
     <script src="Scripts/universalScripts/time.js" defer type="text/javascript"></script>
@@ -40,11 +34,8 @@
     <script src="Scripts/lists/DIYs-V3.js" defer type="text/javascript"></script>
     <script src="Scripts/lists/Diving.js" defer type="text/javascript"></script>
 
-
     <script src="Scripts/craftulator/craftulator.js" defer type="text/javascript"></script>
-    <!--Used to embed a client-side script (JavaScript).-->
-    <!-- "defer" A script that will not run until after the page has loaded-->
-
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7H31G1T9W"></script>
     <script>
@@ -57,53 +48,52 @@
 </head>
 
 <body class="backImage">
-    <!--Contains all the contents of an HTML document.-->
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- header -->
-    <header class="flex align" id="header">
-
-    </header>
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- main content -->
+    <header class="flex align" id="header"></header>
     <div class="mainContent flexVertical">
-
-        <!-- <p class="maintenance">This page is still in development. <br> Please be patient while I work on it :)</p> -->
-
         <h3>How to Use:</h3>
-        <p> Note all the diys you want to craft and press calculate. <br>
-            The program will tell you how many of which items you'll need. <br> <br>
-            Tip: Click the DIY to remove it from the list. <br>
+        <p>
+            Note all the diys you want to craft and press calculate.<br>
+            The program will tell you how many of which items you'll need.<br><br>
+            Tip: Click the DIY to remove it from the list.<br>
         </p>
         <form class="flex form" autocomplete="off">
             <div class="autocomplete" style="width: 100%;">
                 <input type="text" id="diyInp" style="height: 90%; width: 98%;">
             </div>
-            <button type="button" class="addBtn btn" id="addDiy" style="width:35%"
-                onclick="btnAddDiyClick()">Add</button>
+
+            <button type="button" class="addBtn btn" id="addDiy" style="width:35%" onclick="btnAddDiyClick()">Add</button>
         </form>
 
         <div id="diyAddedContainer" class="flexVertical" style="display: none;">
-            <div class="flex" id="DIYContainer" style="flex-wrap: wrap; gap: 0px;">
+            <div class="flex" id="DIYContainer" style="flex-wrap: wrap; gap: 0px;"></div>
 
-            </div>
             <div style="width: 100%; align-self: center;">
-                <button type="button" class="calc btn" id="btnCalcDiy" onclick="calcDiyMaterialsClick()">Calculate
-                    Materials</button>
+                <button type="button" class="calc btn" id="btnCalcDiy" onclick="calcDiyMaterialsClick()">Calculate Materials</button>
             </div>
+
             <div style="width: 60%; align-self: center;">
-                <button type="button" class="removeBtn btn" id="reset" style="width:100%;"
-                    onclick="resetClick()">Reset</button>
+                <button type="button" class="removeBtn btn" id="reset" style="width:100%;" onclick="resetClick()">Reset</button>
             </div>
         </div>
     </div>
 
-    <!-- the list with materials when calculated -->
-    <div id="materialList" class="mainContent flexVertical" style="display: none">
+    <div id="materialList" class="mainContent flexVertical" style="display: none"></div>
 
-    </div>
-    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- footer -->
     <footer class="flex bottomLinks">
         <p>DA: DA-9419-3603-8052 <br> Creator ID: MA-4116-4314-7050 <br> HHN ID: RA-7852-3149-7307</p>
     </footer>
-    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        // Register a service worker after the load event
+        addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').then(console.log('Service worker successfully installed.'))
+        });
+    };
+
+    onappinstalled = event => {
+        console.log('Thank you for installing the app!');
+    };
+</script>
 
 </html>
