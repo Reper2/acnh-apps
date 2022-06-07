@@ -82,7 +82,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -342,7 +342,14 @@ body {
   font-family: "PT Sans", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
   margin: 0px;
   padding: 0px;
 }
@@ -411,21 +418,29 @@ footer {
   margin: auto;
 }
 
-.flex, .flexVertical {
+.flex,
+.flexVertical {
   display: flex;
   gap: 10px;
 }
+
 .flexVertical {
   flex-direction: column;
   gap: 20px;
 }
-.flex :not(footer), .flexVertical :not(footer) {
+
+.flex :not(footer),
+.flexVertical :not(footer) {
   justify-content: space-between;
 }
-.flex :not(header), .flexVertical :not(header) {
+
+.flex :not(header),
+.flexVertical :not(header) {
   gap: 30px;
 }
-.flex .flexChild, .flexVertical .flexChild {
+
+.flex .flexChild,
+.flexVertical .flexChild {
   flex: 1;
 }
 
@@ -436,6 +451,7 @@ footer {
 ul {
   list-style-type: none;
 }
+
 ul a {
   text-decoration: none;
   color: #006994;
@@ -458,11 +474,13 @@ ul a {
     width: 70%;
   }
 }
+
 @media (min-width: 769px) {
   .mainContent {
     width: 30%;
   }
 }
+
 /* menu */
 .menu {
   background-color: transparent;
@@ -502,12 +520,14 @@ ul a {
   right: 0;
   width: 50%;
 }
+
 .dropdown-content a {
   color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
+
 .dropdown-content a:hover {
   background-color: #006994;
 }
@@ -529,6 +549,7 @@ ul a {
     top: 65px;
   }
 }
+
 #header {
   max-height: 80px;
 }
@@ -584,20 +605,25 @@ ul {
   /* Create an active/current tablink class */
   /* Style the tab content */
 }
+
 .currentEvents h2 {
   text-align: center;
 }
+
 .currentEvents .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
+
 .currentEvents .tabs {
   margin-bottom: 20px;
 }
+
 .currentEvents .tabs .noGap {
   gap: 5px;
 }
+
 .currentEvents .tab button {
   background-color: inherit;
   float: left;
@@ -607,12 +633,15 @@ ul {
   padding: 15px 10px;
   transition: 0.3s;
 }
+
 .currentEvents .tab button:hover {
   background-color: #ddd;
 }
+
 .currentEvents .tab button.active {
   background-color: #ccc;
 }
+
 .currentEvents .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -620,9 +649,11 @@ ul {
   border-top: none;
   height: 99%;
 }
+
 .currentEvents .tabcontent h3 {
   margin: 10px 0px;
 }
+
 .currentEvents .tabcontent h4 {
   width: 100%;
 }
@@ -642,11 +673,13 @@ article {
 .form {
   gap: 20px;
 }
+
 .form input,
 .form select,
 .form button {
   width: 100%;
 }
+
 .form .addBtn {
   background-color: #80ff80;
   color: #1e7bfc;
@@ -675,6 +708,7 @@ article {
   width: 80%;
   margin: 0px auto;
 }
+
 .width h4 {
   font-size: 1.3em;
   margin-bottom: 10px;
@@ -740,6 +774,7 @@ article {
 #Shortcuts {
   margin-left: 25px;
 }
+
 #Shortcuts .shortcutBtn {
   background-color: transparent;
   border: none;
@@ -751,6 +786,7 @@ article {
   font-weight: bold;
   text-decoration: none;
 }
+
 .homeLink :visited {
   color: #006994;
   text-decoration: none;
@@ -768,4 +804,6 @@ footer {
 .bottomLinks p {
   text-align: center;
   padding: 0px 10px;
-}/*# sourceMappingURL=Style.css.map */
+}
+
+/*# sourceMappingURL=Style.css.map */

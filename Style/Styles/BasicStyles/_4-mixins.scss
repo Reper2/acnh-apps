@@ -1,61 +1,54 @@
 // Put mixins in this document
 
 @mixin clearfix // Used after floating
-{
-    &:before,
-    &:after
+
     {
+
+    &:before,
+    &:after {
         content: '';
         display: table;
     }
-    &:after
-    {
+
+    &:after {
         clear: both;
     }
 }
 
 // min-width/max width used for defining the minimal and maximal width of the screen
 
-@mixin PhoneS
-{
-    @media (max-width: 320px) 
-    {
+@mixin PhoneS {
+    @media (max-width: 320px) {
         @content;
     }
 }
 
-@mixin PhoneM
-{
+@mixin PhoneM {
     // @media (min-width: 321px) 
     // {
     //     @content;
     // }
 
-    @media (max-width: 375px) 
-    {
+    @media (max-width: 375px) {
         @content;
     }
 }
 
-@mixin PhoneL
-{
+@mixin PhoneL {
     // @media (min-width: 376px) 
     // {
     //     @content;
     // }    
 
-    @media (max-width: 425px) 
-    {
+    @media (max-width: 425px) {
         @content;
     }
 }
 
-@mixin Tablet
-{
-    @media (min-width: 426px) 
-    {
+@mixin Tablet {
+    @media (min-width: 426px) {
         @content;
-    }  
+    }
 
     // @media (max-width: 768px) 
     // {
@@ -63,12 +56,10 @@
     // }
 }
 
-@mixin Laptop1024
-{
-    @media (min-width: 769px) 
-    {
+@mixin Laptop1024 {
+    @media (min-width: 769px) {
         @content;
-    }  
+    }
 
     // @media (max-width: 1024px) 
     // {
@@ -76,10 +67,8 @@
     // }
 }
 
-@mixin LaptopL
-{
-    @media (min-width: 1025px) 
-    {
+@mixin LaptopL {
+    @media (min-width: 1025px) {
         @content;
     }
 }
