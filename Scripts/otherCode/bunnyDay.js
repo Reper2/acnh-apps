@@ -30,5 +30,5 @@ function getEaster(year) {
         day = "0" + day;
     }
 
-    return year +"-"+ month +"-"+ day;
+    return year + "-" + month + "-" + day;
 }

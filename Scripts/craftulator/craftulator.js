@@ -1,44 +1,37 @@
 let diyNames = [];
 
 diyArr.forEach
-(
-    function(diy)
-    {
-        diyNames.push(diy.name);
-    }
-);
+    (
+        function (diy) {
+            diyNames.push(diy.name);
+        }
+    );
 
 autocomplete(document.getElementById("diyInp"), diyNames);
 
 
 let selectedDiyArr = [];
 
-const removeDiyFromArr = function(diyName)
-{
-    for (let i = 0; i < selectedDiyArr.length; i++) 
-    {
-        if (diyName == selectedDiyArr[i].name) 
-        {
+const removeDiyFromArr = function (diyName) {
+    for (let i = 0; i < selectedDiyArr.length; i++) {
+        if (diyName == selectedDiyArr[i].name) {
             selectedDiyArr.splice(i, 1);
         }
     }
 }
 
-const deleteDiy = function(element)
-{
+const deleteDiy = function (element) {
     element.remove();
 }
 
-const diyBtnEvents = function(element)
-{
+const diyBtnEvents = function (element) {
     removeDiyFromArr(element.value);
     deleteDiy(element);
 }
 
-const addDiyToList = function(diy)
-{
+const addDiyToList = function (diy) {
     let list = document.getElementById("DIYContainer")
-    
+
     let container = document.createElement("button");
     container.setAttribute("style", "width: 33%; background-color: transparent; border: none;");
     container.setAttribute("value", diy.name);
@@ -58,23 +51,19 @@ const addDiyToList = function(diy)
 }
 
 
-const btnAddDiyClick = function()
-{
+const btnAddDiyClick = function () {
     let item = (document.getElementById("diyInp")).value;
 
-    if (item != "") 
-    {
+    if (item != "") {
         diyArr.forEach
-        (
-            function(diy)
-            {
-                if (item == diy.name) 
-                {
-                    selectedDiyArr.push(diy);
-                    addDiyToList(diy);
+            (
+                function (diy) {
+                    if (item == diy.name) {
+                        selectedDiyArr.push(diy);
+                        addDiyToList(diy);
+                    }
                 }
-            }
-        );
+            );
 
         let diyContainer = document.getElementById("diyAddedContainer");
         diyContainer.setAttribute("style", "display: flex;");
@@ -87,103 +76,84 @@ let selectedDiyMaterials = [];
 let selectedDiyMaterialsAmount = [];
 
 
-const calculateMaterials = function()
-{
+const calculateMaterials = function () {
     selectedDiyArr.forEach
-    (
-        function (diy)
-        {
-            const diyKeys = Object.keys(diy.materials);
-            const diyValues = Object.values(diy.materials);
+        (
+            function (diy) {
+                const diyKeys = Object.keys(diy.materials);
+                const diyValues = Object.values(diy.materials);
 
-            for (let i = 0; i < diyKeys.length; i++) 
-            {
-                if (selectedDiyMaterials != "") 
-                {
-                    if (selectedDiyMaterials.includes(diyKeys[i])) 
-                    {
-                        for (let x = 0; x < selectedDiyMaterials.length; x++) 
-                        {
-                            if (diyKeys[i] == selectedDiyMaterials[x]) 
-                            {
-                                selectedDiyMaterialsAmount[x] = selectedDiyMaterialsAmount[x] + diyValues[i];
+                for (let i = 0; i < diyKeys.length; i++) {
+                    if (selectedDiyMaterials != "") {
+                        if (selectedDiyMaterials.includes(diyKeys[i])) {
+                            for (let x = 0; x < selectedDiyMaterials.length; x++) {
+                                if (diyKeys[i] == selectedDiyMaterials[x]) {
+                                    selectedDiyMaterialsAmount[x] = selectedDiyMaterialsAmount[x] + diyValues[i];
+                                }
                             }
                         }
+                        else {
+                            selectedDiyMaterials.push(diyKeys[i]);
+                            selectedDiyMaterialsAmount.push(diyValues[i]);
+                        }
                     }
-                    else
-                    {
+                    else {
                         selectedDiyMaterials.push(diyKeys[i]);
                         selectedDiyMaterialsAmount.push(diyValues[i]);
                     }
                 }
-                else
-                {
-                    selectedDiyMaterials.push(diyKeys[i]);
-                    selectedDiyMaterialsAmount.push(diyValues[i]);
-                }
             }
-        }
-    )
+        )
 }
 
-const findImgUrl = function(material)
-{
+const findImgUrl = function (material) {
     let imgUrl;
 
     imgUrl = "https://dodo.ac/np/images/thumb/8/82/Furniture_NH_Inv_Icon.png/120px-Furniture_NH_Inv_Icon.png"; // default url
 
     materialArr.forEach
-    (
-        function (materialItem)
-        {
-            if (material == materialItem.name) 
-            {
-                imgUrl = materialItem.img;                
+        (
+            function (materialItem) {
+                if (material == materialItem.name) {
+                    imgUrl = materialItem.img;
+                }
             }
-        }
-    )
+        )
     fishArr.forEach
-    (
-        function (materialItem)
-        {
-            if (material == materialItem.name) 
-            {
-                imgUrl = materialItem.image_url;                
+        (
+            function (materialItem) {
+                if (material == materialItem.name) {
+                    imgUrl = materialItem.image_url;
+                }
             }
-        }
-    )
+        )
     divingArr.forEach
-    (
-        function (materialItem)
-        {
-            if (material == materialItem.name) 
-            {
-                imgUrl = materialItem.image_url;                
+        (
+            function (materialItem) {
+                if (material == materialItem.name) {
+                    imgUrl = materialItem.image_url;
+                }
             }
-        }
-    )
+        )
     diyArr.forEach
-    (
-        function (materialItem)
-        {
-            if (material == materialItem.name) 
-            {
-                imgUrl = materialItem.img;                
+        (
+            function (materialItem) {
+                if (material == materialItem.name) {
+                    imgUrl = materialItem.img;
+                }
             }
-        }
-    )
+        )
     return imgUrl;
 }
 
-const displayMaterials = function(material, amount)
-{
+const displayMaterials = function (material, amount) {
     var materialList = document.getElementById("materialList");
     materialList.style = "display: flex";
 
     var materialContainer = document.createElement("div");
     materialContainer.setAttribute("class", "flex");
     materialContainer.setAttribute("style", "justify-content: center; align-items: center; gap: 10px");
-    
+
     var materialImg = document.createElement("img");
     materialImg.setAttribute("src", findImgUrl(material));
     materialImg.setAttribute("style", "width: 25%");
@@ -192,7 +162,7 @@ const displayMaterials = function(material, amount)
     itemName.innerHTML = material;
 
     var materialCount = document.createElement("h4");
-    materialCount.innerHTML = "X "+amount;
+    materialCount.innerHTML = "X " + amount;
 
     materialContainer.appendChild(materialImg);
     materialContainer.appendChild(itemName);
@@ -202,8 +172,7 @@ const displayMaterials = function(material, amount)
     // console.log(material, amount)
 }
 
-const calcDiyMaterialsClick = function()
-{
+const calcDiyMaterialsClick = function () {
     document.getElementById("materialList").innerHTML = "";
 
     selectedDiyMaterials = [];
@@ -213,8 +182,7 @@ const calcDiyMaterialsClick = function()
 
     // console.log(selectedDiyMaterials, selectedDiyMaterialsAmount);
 
-    for (let i = 0; i < selectedDiyMaterials.length; i++) 
-    {
+    for (let i = 0; i < selectedDiyMaterials.length; i++) {
         displayMaterials(selectedDiyMaterials[i], selectedDiyMaterialsAmount[i]);
     }
 }

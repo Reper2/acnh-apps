@@ -10,13 +10,13 @@ const birthdaysVillagers = function (villager) {
     icon.setAttribute("style", "width: 80%;");
 
     name.innerHTML = villager.name;
-    date.innerHTML = new Date(getYear() +"-"+ villager.birthday).toLocaleDateString();
+    date.innerHTML = new Date(getYear() + "-" + villager.birthday).toLocaleDateString();
 
     birthN.appendChild(icon);
     birthN.appendChild(name);
     birthN.appendChild(date);
 
-    
+
     var birthS = document.getElementById("birthdaysS");
 
     var icon = document.createElement("img");
@@ -26,31 +26,28 @@ const birthdaysVillagers = function (villager) {
     icon.setAttribute("class", "icons")
     icon.style.width = "80%";
     name.innerHTML = villager.name;
-    date.innerHTML = new Date(getYear() +"-"+ villager.birthday).toLocaleDateString();
-    
+    date.innerHTML = new Date(getYear() + "-" + villager.birthday).toLocaleDateString();
+
     birthS.appendChild(icon);
     birthS.appendChild(name);
     birthS.appendChild(date);
 }
 
-const vilBirthdays = function(date) 
-{
+const vilBirthdays = function (date) {
     villagerBirthdays.forEach
-    (
-        function (villager) 
-        {
-            let birthday = new Date(getYear() + "-" + villager.birthday)
-            let birthM = leadingZeros(birthday.getMonth() + 1);
-            let birthD = leadingZeros(birthday.getDate());
+        (
+            function (villager) {
+                let birthday = new Date(getYear() + "-" + villager.birthday)
+                let birthM = leadingZeros(birthday.getMonth() + 1);
+                let birthD = leadingZeros(birthday.getDate());
 
-            let newD = getYear() + "-" + birthM + "-" + birthD;
+                let newD = getYear() + "-" + birthM + "-" + birthD;
 
-            if (date == newD) 
-            {
-                birthdaysVillagers(villager);
+                if (date == newD) {
+                    birthdaysVillagers(villager);
+                }
             }
-        }
-    )
+        )
 }
 
 vilBirthdays(curDate);
@@ -71,8 +68,7 @@ newBirthday.appendChild(upcomming);
 
 let newD = curDate;
 
-for (let i = 0; i < 3; i++) 
-{
+for (let i = 0; i < 3; i++) {
     newD = addDays(newD, 1);
     vilBirthdays(newD);
 }

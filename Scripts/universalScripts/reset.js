@@ -1,4 +1,3 @@
-const resetClick = function()
-{
+const resetClick = function () {
     location.reload();
 }

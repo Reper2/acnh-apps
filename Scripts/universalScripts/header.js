@@ -37,8 +37,7 @@ let menuButton = document.createElement("button");
 menuButton.setAttribute("type", "dropbtn");
 menuButton.setAttribute("class", "menu");
 
-for (let i = 0; i < 3; i++) 
-{
+for (let i = 0; i < 3; i++) {
     let menuBarDiv = document.createElement("div");
     menuBarDiv.setAttribute("class", "dropmenu");
     menuButton.appendChild(menuBarDiv);

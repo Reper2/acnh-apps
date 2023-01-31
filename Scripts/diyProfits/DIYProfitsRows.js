@@ -2,10 +2,8 @@ const fillSelect = function (Index)// Filling in each select
 {
     materialArr.forEach //Loop through array
         (
-            function (item) 
-            {
-                for (var key in item) 
-                {
+            function (item) {
+                for (var key in item) {
                     var newSelect = document.getElementById("material" + Index);
                     var optn = document.createElement("option");
                     optn.value = Object.values(item)[0];
